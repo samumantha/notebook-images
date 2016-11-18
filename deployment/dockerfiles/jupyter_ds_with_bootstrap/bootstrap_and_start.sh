@@ -10,4 +10,4 @@ if [ ! -z "$BOOTSTRAP_URL" ]; then
     esac
 fi
 
-exec /usr/local/bin/start-notebook.sh
+exec /usr/local/bin/start-notebook.sh $*
