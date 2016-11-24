@@ -1,8 +1,0 @@
-#.pyc files
-*.pyc
-
-#vagrant directory
-.vagrant
-
-# vim .swp files
-*.swp
