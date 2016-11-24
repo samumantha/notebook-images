@@ -1,0 +1,20 @@
+kind: "BuildConfig"
+apiVersion: "v1"
+metadata:
+  name: "__NAME__"
+spec:
+  runPolicy: "SerialLatestOnly"
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/CSC-IT-Center-for-Science/pouta-blueprints.git'
+      ref: feature/custom_containers
+    contextDir: deployment
+  strategy:
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: __NAME__.dockerfile
+  output:
+    to:
+      kind: "ImageStreamTag"
+      name: "__NAME__:latest"
