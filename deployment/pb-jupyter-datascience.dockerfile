@@ -20,6 +20,9 @@ ENV HOME /home/$NB_USER
 COPY scripts/jupyter/autodownload_and_start.sh /usr/local/bin/autodownload_and_start.sh
 RUN chmod a+x /usr/local/bin/autodownload_and_start.sh
 
+# compatibility with old blueprints, remove when not needed
+RUN ln -s /usr/local/bin/autodownload_and_start.sh /usr/local/bin/bootstrap_and_start.bash
+
 USER 1001
 
 CMD ["/usr/local/bin/autodownload_and_start.sh"]
