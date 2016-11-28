@@ -7,8 +7,8 @@ spec:
   source:
     type: Git
     git:
-      uri: 'https://github.com/CSC-IT-Center-for-Science/pouta-blueprints.git'
-      ref: feature/custom_containers
+      uri: 'https://github.com/CSC-IT-Center-for-Science/notebook-images.git'
+      ref: master
     contextDir: deployment
   strategy:
     type: Docker
