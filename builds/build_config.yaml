@@ -9,7 +9,7 @@ spec:
     git:
       uri: 'https://github.com/CSC-IT-Center-for-Science/notebook-images.git'
       ref: master
-    contextDir: deployment
+    contextDir: builds
   strategy:
     type: Docker
     dockerStrategy:
