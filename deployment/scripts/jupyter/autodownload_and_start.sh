@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # backwards compatibility to BOOTSTRAP_* -vars in existing blueprints
 if [ ! -z "$BOOTSTRAP_URL" ]; then
@@ -12,6 +12,11 @@ if [ ! -z "$AUTODOWNLOAD_URL" ]; then
     else
         echo "Downloading $AUTODOWNLOAD_URL"
         wget "$AUTODOWNLOAD_URL"
+    fi
+
+    if [ ! -z "$AUTODOWNLOAD_EXEC" ]; then
+        chmod u+x $AUTODOWNLOAD_EXEC
+        ./$AUTODOWNLOAD_EXEC
     fi
 fi
 
