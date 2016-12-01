@@ -1,4 +1,4 @@
-# Pouta Blueprints Notebook image branch
+# Pouta Blueprints Notebook image sources
 
 This repository contains the Dockerfiles and relevant artefacts for building
 images to use with the Docker driver of [Pouta
