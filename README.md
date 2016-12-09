@@ -9,7 +9,7 @@ driver once it is stabilized.
 
 ## Use instructions for Docker driver
 
-1. build images in buiilds/
+1. build images in builds/
 2. extract images using
         
         docker save csc/pb-jupyter-ml > csc.pb-jupyter-ml.img 
