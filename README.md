@@ -31,4 +31,18 @@ For more detailed descriptions see [Pouta
 Blueprints](https://github.com/CSC-IT-Center-for-Science/pouta-blueprints)
 documentation. (*ToDo: link to gh-pages doc when it's out*)
 
+## Settings in Notebooks.csc.fi
 
+### Jupyter notebooks
+
+  internal port: 8888
+  launch_command: /usr/local/bin/autodownload_and_start.sh --no-browser --port 8888 --ip=0.0.0.0 --NotebookApp.base_url=notebooks{proxy_path} --NotebookApp.allow_origin=*
+  AUTODOWNLOAD_URL=http://example.com/my_script.sh
+
+Proxy options
+  
+  [ ] Rewrite the proxy url
+  [x] Set host header
+  [ ] Redirect the proxy url
+
+  
