@@ -11,11 +11,11 @@ driver once it is stabilized.
 
 1. build images in builds/
 2. extract images using
-        
-        docker save csc/pb-jupyter-ml > csc.pb-jupyter-ml.img 
 
-3. move images to /var/lib/pb/docker_images/ on the host
-   running Pouta Blueprints
+        docker save csc/pb-jupyter-ml > /var/lib/pb/docker_images/csc.pb-jupyter-ml.img
+
+If you write them somewhere else and move it, SELinux labels may not be
+created correctly and you get a very interesting behaviour to debug.
 
 ## Bootstrapping
 
