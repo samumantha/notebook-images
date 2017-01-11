@@ -24,6 +24,10 @@ if [ ! -z "$AUTODOWNLOAD_URL" ]; then
         chmod u+x $AUTODOWNLOAD_EXEC_BG
         ./$AUTODOWNLOAD_EXEC_BG &
     fi
+    # git clone from a URL
+    if [ ! -z "$GIT_URL" ]; then
+        git clone "$GIT_URL"
+    fi
 fi
 
 # become the normal startup script
