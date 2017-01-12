@@ -33,6 +33,12 @@ RUN echo "Theano and Keras" \
     && pip --no-cache-dir install PyYAML seaborn keras \
     && true
 
+
+RUN echo "MNIST image database prepopulation" \
+    && mkdir -p ~/.keras/datasets/ \
+    && wget https://s3.amazonaws.com/img-datasets/mnist.pkl.gz -O ~/.keras/datasets/mnist.pkl.gz
+
+
 RUN echo "pydot and pydot-ng" \
     && pip --no-cache-dir install pydot pydot-ng\
     && true
