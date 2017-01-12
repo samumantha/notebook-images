@@ -26,6 +26,11 @@ host this code wherever you want, but for convenience we have the files under
 [bootstrap](./bootstrap) so that hosting, persistence and versioning is just a
 pull-request away.
 
+To execute the script you can set AUTODOWNLOAD_EXEC or AUTODOWNLOAD_EXEC_BG to
+the filename to be run. The system doesn't immediately infer this from the
+name. You should also be able to set both to split work to what must be done
+before starting Jupyter and what can be done afterwards.
+
 
 For more detailed descriptions see [Pouta
 Blueprints](https://github.com/CSC-IT-Center-for-Science/pouta-blueprints)
