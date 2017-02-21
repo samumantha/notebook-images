@@ -18,6 +18,8 @@ ENV HOME /home/$NB_USER
 COPY scripts/jupyter/autodownload_and_start.sh /usr/local/bin/autodownload_and_start.sh
 RUN chmod a+x /usr/local/bin/autodownload_and_start.sh
 
-USER 1001
+# this change likely makes this container incompatible with openshift
+# but it appears necessary for pyspark to run
+USER 1000
 
 CMD ["/usr/local/bin/autodownload_and_start.sh"]
