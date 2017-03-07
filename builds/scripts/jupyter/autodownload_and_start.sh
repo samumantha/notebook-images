@@ -27,4 +27,4 @@ if [ ! -z "$AUTODOWNLOAD_URL" ]; then
 fi
 
 # become the normal startup script
-exec /usr/local/bin/start-notebook.sh $*
+exec /usr/local/bin/start-notebook.sh $* --NotebookApp.token="$INSTANCE_ID"
