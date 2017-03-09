@@ -23,7 +23,7 @@ RUN chmod a+x /usr/local/bin/autodownload_and_start.sh
 # compatibility with old blueprints, remove when not needed
 RUN ln -s /usr/local/bin/autodownload_and_start.sh /usr/local/bin/bootstrap_and_start.bash
 
-USER 1001
+USER 1000
 
 CMD ["/usr/local/bin/autodownload_and_start.sh"]
 
