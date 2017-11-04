@@ -24,7 +24,10 @@ RUN echo "graphviz from apt" \
     && apt-get clean
 
 RUN echo "Tensorflow" \
-    && pip --no-cache-dir install https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0-cp35-cp35m-linux_x86_64.whl
+    && pip --no-cache-dir install tensorflow
+
+RUN echo "PyTorch" \
+    && pip --no-cache-dir install http://download.pytorch.org/whl/cu75/torch-0.2.0.post3-cp36-cp36m-manylinux1_x86_64.whl
 
 USER 1001
 
