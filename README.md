@@ -17,6 +17,22 @@ driver once it is stabilized.
 If you write them somewhere else and move it, SELinux labels may not be
 created correctly and you get a very interesting behaviour to debug.
 
+## Use instructions for OpenShift driver
+
+build_openshift.sh and build_and_upload_to_openshift.sh contain use cases in
+the docs. jupyter-datascience and images building on that are so monstrous
+that they need to be built outside OS for now.
+
+When creating an OpenShift namespace for the images you *must* go to the
+Docker Registry for that project and make it visible to either logged in users
+or anonymous users. The default setting makes images available only to the
+same namespace which doesn't work and will result in timeouts when starting a
+new container.
+
+The containers are defined by URLs so it's very easy to e.g. build into
+namespace notebook-images-beta, test on a hidden blueprint and then build and
+upload to a production namespace like notebook-images.
+
 ## Bootstrapping
 
 The scripts in builds/scripts e.g.
