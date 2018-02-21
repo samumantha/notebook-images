@@ -8,7 +8,7 @@ fi
 # We might be interested in jupyter lab instead of jupyter notebook
 # default to notebook but let environment creator define something else
 # if desired
-COMMAND="${COMMAND:="jupyter notebook"}"
+COMMAND="${COMMAND:="notebook"}"
 if [ ! -z "$AUTODOWNLOAD_URL" ]; then
     # custom target filename
     if [ ! -z "$AUTODOWNLOAD_FILENAME" ]; then
@@ -31,4 +31,4 @@ if [ ! -z "$AUTODOWNLOAD_URL" ]; then
 fi
 echo $COMMAND
 # become the normal startup script
-exec /usr/local/bin/start.sh "$COMMAND" $* --NotebookApp.token="$INSTANCE_ID"
+exec /usr/local/bin/start.sh jupyter $COMMAND $* --NotebookApp.token="$INSTANCE_ID"
