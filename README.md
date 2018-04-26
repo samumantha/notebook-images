@@ -17,6 +17,17 @@ driver once it is stabilized.
 If you write them somewhere else and move it, SELinux labels may not be
 created correctly and you get a very interesting behaviour to debug.
 
+## SELinux labels
+
+If the image was build somewhere else than the docker_host using it, then the SELinux labels need to be checked.
+
+        ls -Z
+        
+If the labels do not match the labels of the other images running in production, then the label needs to be changed
+
+        chcon -Rt <TYPE_TO_BE_CHECKED_FROM_OTHER_IMAGES> <FILE_NAME>
+
+
 ## Bootstrapping
 
 The scripts in builds/scripts e.g.
