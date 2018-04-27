@@ -17,6 +17,32 @@ driver once it is stabilized.
 If you write them somewhere else and move it, SELinux labels may not be
 created correctly and you get a very interesting behaviour to debug.
 
+## Optional: Transferring images to and from object storage
+
+It is highly preferred to build the images on a separate VM then the vm which is running pebbles/notebooks.
+For easier transfer, you could use cPouta object storage. 
+In order to do that, first you need to create a container (If doesn't already exist) using the Openstack Horizon UI (Object Store -> Containers -> +Container) or use the command line.
+
+To use the Swift API for object storage, install the python client.
+
+        pip install python-swiftclient
+        
+Then, from the VM where the image exists, source the openrc.sh file (Can be obtained from Horizon UI)
+
+        source openrc.sh
+        
+Next, try to upload the file to a container.
+
+        swift upload <container-name> csc.pb-jupyter-ml.img
+        
+ After this, for quick download, make the container public using the UI (you can always make it private again)
+ 
+ On the notebooks/pebbles VM -
+ 
+        wget https://<container-name>.object.pouta.csc.fi/csc.pb-jupyter-ml.img
+
+Alternatively, one could use the python swift client to download the file, if the container is kept private.
+
 ## SELinux labels
 
 If the image was build somewhere else than the docker_host using it, then the SELinux labels need to be checked.
