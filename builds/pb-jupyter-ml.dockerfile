@@ -26,8 +26,14 @@ RUN echo "graphviz from apt" \
 RUN echo "Tensorflow" \
     && pip --no-cache-dir install tensorflow
 
+RUN echo "Scikit-Learn" \
+    && pip --no-cache-dir install sklearn
+
 RUN echo "PyTorch" \
     && pip --no-cache-dir install http://download.pytorch.org/whl/cu75/torch-0.2.0.post3-cp36-cp36m-manylinux1_x86_64.whl
+
+RUN echo "TorchVision" \
+    && pip --no-cache-dir install torchvision
 
 USER 1001
 
