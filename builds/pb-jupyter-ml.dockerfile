@@ -30,7 +30,7 @@ RUN echo "Scikit-Learn" \
     && pip --no-cache-dir install sklearn
 
 RUN echo "PyTorch" \
-    && pip --no-cache-dir install http://download.pytorch.org/whl/cu75/torch-0.2.0.post3-cp36-cp36m-manylinux1_x86_64.whl
+    && pip --no-cache-dir install http://download.pytorch.org/whl/cpu/torch-0.4.1-cp36-cp36m-linux_x86_64.whl
 
 RUN echo "TorchVision" \
     && pip --no-cache-dir install torchvision
