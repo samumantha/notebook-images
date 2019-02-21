@@ -16,5 +16,17 @@ if [ ! -z "$AUTODOWNLOAD_URL" ]; then
         echo "Downloading $AUTODOWNLOAD_URL"
         su "$USER" -c "cd '$HOME_DIR' && wget '$AUTODOWNLOAD_URL'"
     fi
+    # execution if desired
+    if [ ! -z "$AUTODOWNLOAD_EXEC" ]; then
+        cd $HOME_DIR
+        chmod u+x $AUTODOWNLOAD_EXEC
+        ./$AUTODOWNLOAD_EXEC
+    fi
+    # background execution if desired
+    if [ ! -z "$AUTODOWNLOAD_EXEC_BG" ]; then
+        cd $HOME_DIR
+        chmod u+x $AUTODOWNLOAD_EXEC_BG
+        ./$AUTODOWNLOAD_EXEC_BG &
+    fi
 fi
 
