@@ -35,6 +35,15 @@ RUN echo "PyTorch" \
 RUN echo "TorchVision" \
     && pip --no-cache-dir install torchvision
 
+RUN echo "Xgboost" \
+    && pip --no-cache-dir install xgboost
+
+RUN echo "Scikit-Image" \
+    && pip --no-cache-dir install scikit-image
+
+RUN echo "Graphviz" \
+    && pip --no-cache-dir install graphviz
+
 USER 1001
 
 RUN echo "Theano and Keras" \
