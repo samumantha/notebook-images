@@ -23,8 +23,11 @@ RUN echo "graphviz from apt" \
     && apt-get install -y graphviz \
     && apt-get clean
 
+RUN echo "upgrade pip and setuptools" \
+    && pip --no-cache-dir install --upgrade pip setuptools
+
 RUN echo "Tensorflow" \
-    && pip --no-cache-dir install tensorflow
+    && pip --no-cache-dir install tensorflow==2.0.0-rc0
 
 RUN echo "Scikit-Learn" \
     && pip --no-cache-dir install sklearn
