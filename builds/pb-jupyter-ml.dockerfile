@@ -23,6 +23,8 @@ RUN echo "graphviz from apt" \
     && apt-get install -y graphviz \
     && apt-get clean
 
+USER $NB_USER
+
 RUN echo "upgrade pip and setuptools" \
     && pip --no-cache-dir install --upgrade pip setuptools
 
@@ -47,18 +49,14 @@ RUN echo "Scikit-Image" \
 RUN echo "Graphviz" \
     && pip --no-cache-dir install graphviz
 
-USER 1001
-
 RUN echo "Theano and Keras" \
     && pip --no-cache-dir install Theano \
     && pip --no-cache-dir install PyYAML seaborn keras \
     && true
 
-
 RUN echo "MNIST image database prepopulation" \
     && mkdir -p ~/.keras/datasets/ \
     && wget https://s3.amazonaws.com/img-datasets/mnist.pkl.gz -O ~/.keras/datasets/mnist.pkl.gz
-
 
 RUN echo "pydot and pydot-ng" \
     && pip --no-cache-dir install pydot pydot-ng\

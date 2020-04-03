@@ -18,6 +18,6 @@ ENV HOME /home/$NB_USER
 COPY scripts/jupyter/autodownload_and_start.sh /usr/local/bin/autodownload_and_start.sh
 RUN chmod a+x /usr/local/bin/autodownload_and_start.sh
 
-USER 1001
+USER $NB_USER
 
 CMD ["/usr/local/bin/autodownload_and_start.sh"]
