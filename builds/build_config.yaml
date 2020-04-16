@@ -7,7 +7,7 @@ spec:
   source:
     type: Git
     git:
-      uri: 'https://github.com/CSC-IT-Center-for-Science/notebook-images.git'
+      uri: "https://github.com/CSCfi/notebook-images.git"
       ref: master
     contextDir: builds
   strategy:
