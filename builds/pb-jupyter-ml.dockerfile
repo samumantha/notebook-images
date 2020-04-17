@@ -18,6 +18,11 @@ ENV HOME /home/$NB_USER
 COPY scripts/jupyter/autodownload_and_start.sh /usr/local/bin/autodownload_and_start.sh
 RUN chmod a+x /usr/local/bin/autodownload_and_start.sh
 
+RUN echo "ssh-client and less from apt" \
+    && apt-get update \
+    && apt-get install -y ssh-client less \
+    && apt-get clean
+
 RUN echo "graphviz from apt" \
     && apt-get update \
     && apt-get install -y graphviz \
