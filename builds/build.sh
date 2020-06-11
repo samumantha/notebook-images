@@ -3,7 +3,11 @@
 set -e
 
 repository=${TAG_REPOSITORY:-'csc'}
+
+# set filter
 filter=${1:-'*'}
+# remove trailing .dockerfile from filter, if exists
+filter=${filter%.dockerfile}
 
 for dockerfile in $filter.dockerfile; do
 
