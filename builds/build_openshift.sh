@@ -2,11 +2,10 @@
 
 set -e
 
-if [ ! -z "$1" ]; then
-    filter=$1
-else
-    filter='*'
-fi
+# set filter
+filter=${1:-'*'}
+# remove trailing .dockerfile from filter, if exists
+filter=${filter%.dockerfile}
 
 for dockerfile in $filter.dockerfile; do
 
