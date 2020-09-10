@@ -34,7 +34,7 @@ RUN echo "upgrade pip and setuptools" \
     && pip --no-cache-dir install --upgrade pip setuptools
 
 RUN echo "Tensorflow" \
-    && pip --no-cache-dir install tensorflow==2.0.0
+    && pip --no-cache-dir install tensorflow==2.3.0
 
 RUN echo "Scikit-Learn" \
     && pip --no-cache-dir install sklearn
