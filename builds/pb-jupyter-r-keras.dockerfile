@@ -13,7 +13,7 @@ RUN chgrp -R root /home/$NB_USER \
     && find /opt/conda -type d -exec chmod g+rwx,o+rx {} \; \
     && find /opt/conda -type f -exec chmod g+rw {} \;
 
-RUN ln -s /usr/bin/env /bin/env
+RUN test -f /bin/env || ln -s /usr/bin/env /bin/env
 
 ENV HOME /home/$NB_USER
 
