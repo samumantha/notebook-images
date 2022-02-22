@@ -1,4 +1,4 @@
-FROM jupyter/datascience-notebook
+FROM jupyter/minimal-notebook
 
 MAINTAINER Samantha Wittke <samantha.wittke@csc.fi>
 
@@ -37,7 +37,7 @@ RUN jupyter lab build
 RUN conda clean -afy
 
 
-# below from pb-jupyter-datascience.dockerfile
+# below from pb-jupyter-minimal.dockerfile
 
 USER root
 
@@ -61,9 +61,6 @@ RUN echo "ssh-client and less from apt" \
     && apt-get update \
     && apt-get install -y ssh-client less \
     && apt-get clean
-
-# compatibility with old blueprints, remove when not needed
-RUN ln -s /usr/local/bin/autodownload_and_start.sh /usr/local/bin/bootstrap_and_start.bash
 
 USER $NB_USER
 
