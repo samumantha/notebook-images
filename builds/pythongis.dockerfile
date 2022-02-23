@@ -40,8 +40,6 @@ WORKDIR /opt/app
 # Conda packages from https://github.com/Automating-GIS-processes/site/blob/master/ci/py38-GIS.yaml
 RUN conda install --yes -c conda-forge -c patrikhlobil \
   python=3.8 \
-  jupyterlab \
-  jupyterlab-git \
   matplotlib \
   geopandas \
   geojson \
@@ -56,9 +54,6 @@ RUN conda install --yes -c conda-forge -c patrikhlobil \
   folium \
   mplleaflet \
   bokeh \
-  patrikhlobil::pandas-bokeh \
-  imageio \
-  nose \
   pip 
 
 #RUN jupyter lab build
